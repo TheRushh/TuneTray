@@ -11,11 +11,12 @@ A minimal macOS menu bar app for YouTube Music.
 
 ## How to Run
 
-1. Navigate to the project directory:
+1. Clone the repository:
    ```bash
-   cd /Users/therushh/.gemini/antigravity/scratch/TuneTray
+   git clone https://github.com/TheRushh/TuneTray.git
+   cd TuneTray
    ```
-2. Install dependencies (if not already):
+2. Install dependencies:
    ```bash
    npm install
    ```
