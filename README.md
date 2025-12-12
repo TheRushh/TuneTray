@@ -25,9 +25,18 @@ A minimal macOS menu bar app for YouTube Music.
    npm start
    ```
 
-## Installation (Build)
+## Build for macOS
 
-To build a standalone `.app`:
+To create a standalone `.app` application:
 
-1. Install electron-packager or electron-builder.
-2. Run the build script (not yet configured).
+1. Run the build script:
+   ```bash
+   npm run build
+   ```
+2. This will generate a `TuneTray-darwin-universal` folder containing `TuneTray.app`.
+3. You can drag `TuneTray.app` to your Applications folder.
+
+## Notes
+
+- On first launch, you might need to right-click the app and select 'Open' if it's not signed (standard macOS security behavior for unsigned apps).
+- The app will appear in your menu bar (top right).
