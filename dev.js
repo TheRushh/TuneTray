@@ -1,9 +1,8 @@
 // Dev launcher — watches files and restarts a single Electron process on changes
 const { spawn } = require("child_process");
 const chokidar = require("chokidar");
-const path = require("path");
 
-const electronBin = path.join(__dirname, "node_modules", ".bin", "electron");
+const electronBin = require.resolve("electron");
 
 let child = null;
 let restarting = false;
