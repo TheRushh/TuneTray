@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
+    "dev": "node dev.js",
     "build": "electron-packager . TuneTray --platform=darwin --arch=universal --overwrite"
   },
   "keywords": [],
@@ -13,7 +14,12 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "chokidar": "^5.0.0",
     "electron": "^39.2.6",
     "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "sql.js": "^1.14.1"
   }
 }
