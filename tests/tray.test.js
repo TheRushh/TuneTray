@@ -11,7 +11,7 @@ describe("createTray", () => {
   test("creates tray with correct title and tooltip", () => {
     createTray({ onToggle: jest.fn() });
     expect(mockTray.setTitle).toHaveBeenCalledWith("♫");
-    expect(mockTray.setToolTip).toHaveBeenCalledWith("TuneTray");
+    expect(mockTray.setToolTip).toHaveBeenCalledWith("TuneTray - YouTube Music");
   });
 
   test("registers click handler for toggle", () => {

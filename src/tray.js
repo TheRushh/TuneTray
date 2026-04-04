@@ -7,7 +7,7 @@ function createTray({ onToggle }) {
   const icon = nativeImage.createFromDataURL(TRANSPARENT_ICON);
   const tray = new Tray(icon);
   tray.setTitle("♫");
-  tray.setToolTip("TuneTray");
+  tray.setToolTip("TuneTray - YouTube Music");
 
   tray.on("click", onToggle);
 
