@@ -13,9 +13,7 @@ function createTray({ onToggle }) {
 
   tray.on("right-click", () => {
     tray.popUpContextMenu(
-      Menu.buildFromTemplate([
-        { label: "Quit TuneTray", click: () => app.quit() },
-      ])
+      Menu.buildFromTemplate([{ label: "Quit TuneTray", click: () => app.quit() }])
     );
   });
 
