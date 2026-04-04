@@ -1,25 +1,47 @@
 {
   "name": "tunetray",
   "version": "1.0.0",
-  "description": "",
+  "description": "YouTube Music in your Mac menu bar",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "dev": "node dev.js",
-    "build": "electron-packager . TuneTray --platform=darwin --arch=universal --overwrite"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Rushabh Vakharwala",
   "license": "ISC",
   "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "dev": "node dev.js",
+    "build": "electron-builder --mac",
+    "build:ci": "electron-builder --mac --publish never"
+  },
+  "build": {
+    "appId": "com.rushabhvakharwala.tunetray",
+    "productName": "TuneTray",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.music",
+      "target": [
+        { "target": "dmg", "arch": ["universal"] },
+        { "target": "zip", "arch": ["universal"] }
+      ]
+    },
+    "dmg": {
+      "title": "TuneTray ${version}",
+      "window": { "width": 540, "height": 380 }
+    },
+    "publish": {
+      "provider": "github",
+      "releaseType": "release"
+    }
+  },
   "devDependencies": {
     "chokidar": "^5.0.0",
     "electron": "^39.2.6",
-    "electron-packager": "^17.1.2"
-  },
-  "dependencies": {
-    "keytar": "^7.9.0",
-    "sql.js": "^1.14.1"
+    "electron-builder": "^26.8.1"
   }
 }
