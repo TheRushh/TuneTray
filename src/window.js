@@ -43,7 +43,7 @@ function showWindow(win, tray) {
   const trayBounds = tray.getBounds();
 
   let x = Math.round(trayBounds.x + trayBounds.width / 2 - winBounds.width / 2);
-  let y = Math.round(trayBounds.y + trayBounds.height + 4);
+  const y = Math.round(trayBounds.y + trayBounds.height + 4);
 
   if (x + winBounds.width > width) x = width - winBounds.width - 10;
   if (x < 0) x = 10;

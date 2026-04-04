@@ -10,7 +10,24 @@
     "start": "electron .",
     "dev": "node dev.js",
     "build": "electron-builder --mac",
-    "build:ci": "electron-builder --mac --publish never"
+    "build:ci": "electron-builder --mac --publish never",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "{src,tests}/**/*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "build": {
     "appId": "com.rushabhvakharwala.tunetray",
@@ -26,13 +43,26 @@
     "mac": {
       "category": "public.app-category.music",
       "target": [
-        { "target": "dmg", "arch": ["universal"] },
-        { "target": "zip", "arch": ["universal"] }
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "universal"
+          ]
+        }
       ]
     },
     "dmg": {
       "title": "TuneTray ${version}",
-      "window": { "width": 540, "height": 380 }
+      "window": {
+        "width": 540,
+        "height": 380
+      }
     },
     "publish": {
       "provider": "github",
@@ -42,6 +72,12 @@
   "devDependencies": {
     "chokidar": "^5.0.0",
     "electron": "^39.2.6",
-    "electron-builder": "^26.8.1"
+    "electron-builder": "^26.8.1",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "jest": "^30.3.0",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1"
   }
 }

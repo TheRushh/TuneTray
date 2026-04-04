@@ -33,7 +33,10 @@ function restart(file) {
 start();
 
 chokidar
-  .watch(["index.js", "src/**/*.js"], { ignoreInitial: true, awaitWriteFinish: { stabilityThreshold: 200 } })
+  .watch(["index.js", "src/**/*.js"], {
+    ignoreInitial: true,
+    awaitWriteFinish: { stabilityThreshold: 200 },
+  })
   .on("change", restart);
 
 process.on("SIGINT", () => {
