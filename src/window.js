@@ -61,4 +61,4 @@ function toggleWindow(win, tray) {
   }
 }
 
-module.exports = { createWindow, loadYTMusic, showWindow, toggleWindow };
+module.exports = { createWindow, loadYTMusic, toggleWindow };
